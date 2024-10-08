@@ -14,12 +14,14 @@ class AIAgent:
         ])
         return response["message"]["content"]
 
-# Create an instance of the AI agent
-agent = AIAgent()
 
-# Example usage
-question = "What are the benefits of AI in healthcare?"
-answer = agent.ask(question)
-print(f"Question: {question}")
-print(f"Answer: {answer}")
+if __name__ == "__main__":
+    # Create an instance of the AI agent
+    agent = AIAgent()
+
+    # Example usage
+    question = "What are the benefits of AI in healthcare?"
+    answer = agent.ask(question)
+    print(f"Question: {question}")
+    print(f"Answer: {answer}")
 
