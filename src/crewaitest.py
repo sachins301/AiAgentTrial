@@ -1,15 +1,20 @@
 import os
 from crewai import Agent, Task, Crew
-from langchain.llms import Ollama
+from dotenv import load_dotenv
+load_dotenv()
 
-llm = Ollama(model="llama2")
+from langchain_community.llms import Ollama
+llm = Ollama(model="ollama/llama2", base_url="http://localhost:11434/v1")
+print("########################")
+print(llm)
+print("########################")
 
 agent = Agent(
     role="Information Agent",
     goal="Give compelling information about a certain topic",
     backstory="""
     """,
-    llm=llm
+    llm='ollama/llama2'
 )
 
 task = Task(
