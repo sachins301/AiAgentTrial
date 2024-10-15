@@ -1,9 +1,11 @@
-from crewai import Agent
+from crewai import LLM, Agent
 from tools.calculator_tool import CalculatorTool
 
 class MathAgent():
     def __init__(self):
-        self.model = 'ollama/llama3'
+        # For local testing remove the base_url, 
+        # http://ollama:11434 is the url for the ollama container
+        self.model = LLM(model='ollama/llama3', base_url='http://ollama:11434')
 
     def get_agent(self):
         return Agent(
